@@ -1,0 +1,7 @@
+[
+  {
+    "level": "info",
+    "resourceId": "database-5678",
+    "message": "Database query executed"
+  }
+]

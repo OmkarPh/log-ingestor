@@ -1,0 +1,211 @@
+[
+  {
+    "level": "error",
+    "message": "Failed to start service",
+    "resourceId": "service-456789",
+    "timestamp": "2023-09-15T15:30:00Z",
+    "traceId": "jkl-mno-789",
+    "spanId": "span-234",
+    "commit": "5e6f7a8",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "serviceName": "web_app"
+    }
+  },
+  {
+    "level": "warning",
+    "message": "Service degradation detected",
+    "resourceId": "service-4567890",
+    "timestamp": "2023-09-15T16:45:00Z",
+    "traceId": "pqr-stu-901",
+    "spanId": "span-567",
+    "commit": "9a8b7c6",
+    "metadata": {
+      "parentResourceId": "server-9876",
+      "serviceName": "api_gateway"
+    }
+  },
+  {
+    "level": "warning",
+    "message": "Service outage reported",
+    "resourceId": "service-890123",
+    "timestamp": "2023-09-16T09:45:00Z",
+    "traceId": "pqr-stu-901",
+    "spanId": "span-567",
+    "commit": "9a8b7c6",
+    "metadata": {
+      "parentResourceId": "server-9876",
+      "serviceName": "notification_service"
+    }
+  },
+  {
+    "level": "warning",
+    "message": "Service version update available",
+    "resourceId": "service-678901",
+    "timestamp": "2023-09-16T11:15:00Z",
+    "traceId": "abc-def-345",
+    "spanId": "span-678",
+    "commit": "6g7h8i9",
+    "metadata": {
+      "parentResourceId": "server-9876",
+      "serviceName": "authentication"
+    }
+  },
+  {
+    "level": "warning",
+    "message": "Service API version deprecated",
+    "resourceId": "service-78901234",
+    "timestamp": "2023-09-16T15:45:00Z",
+    "traceId": "pqr-stu-901",
+    "spanId": "span-567",
+    "commit": "9a8b7c6",
+    "metadata": {
+      "parentResourceId": "server-9876",
+      "serviceName": "user_management"
+    }
+  },
+  {
+    "level": "warning",
+    "message": "Service endpoint unreachable",
+    "resourceId": "service-567890123",
+    "timestamp": "2023-09-16T17:15:00Z",
+    "traceId": "abc-def-345",
+    "spanId": "span-678",
+    "commit": "6g7h8i9",
+    "metadata": {
+      "parentResourceId": "server-9876",
+      "serviceName": "notification_delivery"
+    }
+  },
+  {
+    "level": "warning",
+    "message": "Service request rejected",
+    "resourceId": "service-901234567",
+    "timestamp": "2023-09-16T18:00:00Z",
+    "traceId": "vwx-yza-234",
+    "spanId": "span-890",
+    "commit": "1d2e3f4",
+    "metadata": {
+      "parentResourceId": "server-9876",
+      "serviceName": "payment_gateway"
+    }
+  },
+  {
+    "level": "warning",
+    "message": "Service request timeout",
+    "resourceId": "service-6789012345",
+    "timestamp": "2023-09-16T19:30:00Z",
+    "traceId": "jkl-mno-789",
+    "spanId": "span-234",
+    "commit": "5e6f7a8",
+    "metadata": {
+      "parentResourceId": "server-9876",
+      "serviceName": "file_storage"
+    }
+  },
+  {
+    "level": "warning",
+    "message": "Service downtime scheduled",
+    "resourceId": "service-45678901234",
+    "timestamp": "2023-09-16T21:00:00Z",
+    "traceId": "vwx-yza-234",
+    "spanId": "span-890",
+    "commit": "1d2e3f4",
+    "metadata": {
+      "parentResourceId": "server-9876",
+      "downtimeDuration": "4 hours",
+      "serviceName": "billing"
+    }
+  },
+  {
+    "level": "warning",
+    "message": "Service network outage",
+    "resourceId": "service-123456789012",
+    "timestamp": "2023-09-16T22:30:00Z",
+    "traceId": "jkl-mno-789",
+    "spanId": "span-234",
+    "commit": "5e6f7a8",
+    "metadata": {
+      "parentResourceId": "server-9876",
+      "outageLocation": "datacenter-2"
+    }
+  },
+  {
+    "level": "warning",
+    "message": "Service version update available",
+    "resourceId": "service-78901234567",
+    "timestamp": "2023-09-17T00:00:00Z",
+    "traceId": "vwx-yza-234",
+    "spanId": "span-890",
+    "commit": "1d2e3f4",
+    "metadata": {
+      "parentResourceId": "server-9876",
+      "serviceName": "authentication"
+    }
+  },
+  {
+    "level": "error",
+    "message": "Failed to update software",
+    "resourceId": "software-67890",
+    "timestamp": "2023-09-15T13:00:00Z",
+    "traceId": "vwx-yza-234",
+    "spanId": "span-890",
+    "commit": "1d2e3f4",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "softwareType": "web_server"
+    }
+  },
+  {
+    "level": "error",
+    "message": "Failed to connect to external API",
+    "resourceId": "api-5678",
+    "timestamp": "2023-09-15T10:00:00Z",
+    "traceId": "pqr-stu-901",
+    "spanId": "span-234",
+    "commit": "6a5b4c3",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "apiName": "third-party-api"
+    }
+  },
+  {
+    "level": "error",
+    "message": "Failed API authentication",
+    "resourceId": "api-4567890123",
+    "timestamp": "2023-09-16T19:00:00Z",
+    "traceId": "vwx-yza-234",
+    "spanId": "span-890",
+    "commit": "1d2e3f4",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "apiName": "user_data"
+    }
+  },
+  {
+    "level": "error",
+    "message": "File upload failed",
+    "resourceId": "file-456789",
+    "timestamp": "2023-09-16T10:45:00Z",
+    "traceId": "pqr-stu-901",
+    "spanId": "span-567",
+    "commit": "9a8b7c6",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "uploadType": "image"
+    }
+  },
+  {
+    "level": "error",
+    "message": "File download failed",
+    "resourceId": "file-678901234",
+    "timestamp": "2023-09-16T17:30:00Z",
+    "traceId": "jkl-mno-789",
+    "spanId": "span-234",
+    "commit": "5e6f7a8",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "downloadType": "document"
+    }
+  }
+]

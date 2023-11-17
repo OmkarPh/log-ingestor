@@ -1,0 +1,8 @@
+[[tasks]]
+name = "Log ingestor"
+script = "cmd/server.go"
+args = []
+
+[[watcher]]
+paths = ["**/*.go"]
+build_delay = 1000

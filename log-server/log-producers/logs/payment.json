@@ -1,0 +1,93 @@
+[
+  {
+    "level": "error",
+    "message": "Failed to process refund",
+    "resourceId": "refund-7890123",
+    "timestamp": "2023-09-16T13:45:00Z",
+    "traceId": "pqr-stu-901",
+    "spanId": "span-567",
+    "commit": "9a8b7c6",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "refundType": "credit_card"
+    }
+  },
+  {
+    "level": "error",
+    "message": "Failed to process order",
+    "resourceId": "order-123456",
+    "timestamp": "2023-09-16T10:00:00Z",
+    "traceId": "vwx-yza-234",
+    "spanId": "span-890",
+    "commit": "1d2e3f4",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "orderType": "online_purchase"
+    }
+  },
+  {
+    "level": "error",
+    "message": "Failed to process order return",
+    "resourceId": "order-89012345678",
+    "timestamp": "2023-09-16T22:00:00Z",
+    "traceId": "vwx-yza-234",
+    "spanId": "span-890",
+    "commit": "1d2e3f4",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "returnType": "defective_item"
+    }
+  },
+  {
+    "level": "error",
+    "message": "Failed to process payment",
+    "resourceId": "payment-67890",
+    "timestamp": "2023-09-15T11:30:00Z",
+    "traceId": "jkl-mno-789",
+    "spanId": "span-234",
+    "commit": "1a2b3c4",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "paymentMethod": "credit_card"
+    }
+  },
+  {
+    "level": "error",
+    "message": "Payment gateway timeout",
+    "resourceId": "payment-345678",
+    "timestamp": "2023-09-16T08:30:00Z",
+    "traceId": "vwx-yza-234",
+    "spanId": "span-890",
+    "commit": "1d2e3f4",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "paymentMethod": "paypal"
+    }
+  },
+  {
+    "level": "error",
+    "message": "Failed to process subscription",
+    "resourceId": "subscription-23456789012",
+    "timestamp": "2023-09-16T20:30:00Z",
+    "traceId": "jkl-mno-789",
+    "spanId": "span-234",
+    "commit": "5e6f7a8",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "subscriptionType": "monthly_plan"
+    }
+  },
+  {
+    "level": "error",
+    "message": "Failed to process subscription cancellation",
+    "resourceId": "subscription-56789012345",
+    "timestamp": "2023-09-16T23:30:00Z",
+    "traceId": "jkl-mno-789",
+    "spanId": "span-234",
+    "commit": "5e6f7a8",
+    "metadata": {
+      "parentResourceId": "server-5432",
+      "cancellationType": "auto_renewal"
+    }
+  }
+]

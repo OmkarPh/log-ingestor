@@ -1,0 +1,7 @@
+[
+  {
+    "level": "error",
+    "resourceId": "server-1234",
+    "message": "Failed to connect to DB"
+  }
+]

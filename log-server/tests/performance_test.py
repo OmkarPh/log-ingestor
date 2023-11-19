@@ -1,17 +1,23 @@
 import requests
 import random
 import time
+from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor
 from sample_logs import sample_logs
+from utils import generate_random_timestamp_in_range
 
 PORT = 3000
-LOGS_LENGTH = 300
+LOGS_LENGTH = 2000
 BASE_URL = f"http://localhost:{PORT}"
-
 
 # Repeat the sample_logs array as needed to reach or exceed the desired length n
 logs = (sample_logs * (LOGS_LENGTH // len(sample_logs) + 1))[:LOGS_LENGTH]
 random.shuffle(logs)
+
+start_date = datetime(2021, 1, 1)
+end_date = datetime(2023, 12, 31)
+for log in logs:
+    log['timestamp'] = generate_random_timestamp_in_range(start_date, end_date) 
 
 print("Logs:", len(logs))
 
@@ -54,4 +60,5 @@ if __name__ == "__main__":
 
     # Get the number of logs in the database after scalability_tester is complete
     post_test_log_count = get_logs_count()
-    print(f"Number of logs in the database after ingestion: {post_test_log_count}")
+    print(f"Number of logs in the database right now: {post_test_log_count}")
+    print(f"Rest, are in the buffer waiting to be ingested !!")

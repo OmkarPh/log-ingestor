@@ -24,7 +24,7 @@
     <!-- <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a> -->
     <!-- <br /> -->
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://youtu.be/dBZZXU9ydEA">View Video Demo 📽️</a>
     <!-- ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
     ·
@@ -69,11 +69,7 @@
 
 [![Log analyser][product-screenshot]](https://github.com/OmkarPh)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+This is an efficient implementation of a log ingestion & analysis solution. It utilises Golang & Elastic DB to efficiently ingest, store & analyse logs. It can accept logs from two sources, Kafka queue or direct HTTP API requests. It also provides a web UI for analysis of logs using different filters & search queries.
 
 ### Features
 - Text-search across all fields

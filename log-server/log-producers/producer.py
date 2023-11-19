@@ -3,7 +3,7 @@ import time
 import argparse
 from kafka import KafkaProducer
 
-LOGS_TIME_INTERVAL = 5 # in seconds
+LOGS_TIME_INTERVAL = 1  # Time interval between sending logs (in seconds)
 
 TEST_LOGS_PATH = "logs"
 

@@ -1,32 +1,13 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2sZOX9xt)
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
 <a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
+<!-- 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
+[![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 <!-- PROJECT LOGO -->
 <br />
@@ -51,8 +32,6 @@
   </p>
 </div>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -67,140 +46,278 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#installation--usage">Installation & usage</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li>
+      <a href="#api-documentation">API Documentation</a>
+      <ul>
+        <li><a href="#ingestion-routes">Ingestion Routes</a></li>
+        <li><a href="#query-routes">Query Routes</a></li>
+      </ul>
+    </li>
+    <li><a href="#additional-information">Additional Information</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Log analyser][product-screenshot]](https://github.com/OmkarPh)
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Features
+- Text-search across all fields
+- Regular expression search on all fields
+- Filters on specific fields
+- Search in given time range
+- Combination of all filters & search
+- HTTP endpoint for posting logs
+- Kafka queue for streamlined Log processing
+- Ingestion Buffer & Batch processing
+- Efficient search queries leveraging Elastic DB
+- Scalable & Efficient processing using sharding provided by Elastic DB
 
 
 ### Built With
 
-* [![Golang][Golang]][Golang-url]
-* [![Python][Python]][Python-url]
-* [![React][React.js]][React-url]
-* [![Kafka][Kafka]][Kafka-url]
-* [![Elasticsearch][Elasticsearch]][Elasticsearch-url]
-* [![Gin][Gin]][Gin-url]
+- [![Golang][Golang]][Golang-url]
+- [![Python][Python]][Python-url]
+- [![Elasticsearch][Elasticsearch]][Elasticsearch-url]
+- [![Kafka][Kafka]][Kafka-url]
+- [![TypeScript][TypeScript]][TypeScript-url]
+- [![React][React.js]][React-url]
+- [![Gin][Gin]][Gin-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
-## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+## Getting Started
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+- Python
+- Node JS & NPM
+- Golang
+- Kafka
+- Elastic Search
+
+### Installation & usage
+
+- Clone the repo
+
   ```sh
-  npm install npm@latest -g
+  git clone https://github.com/dyte-submissions/november-2023-hiring-OmkarPh
+  cd november-2023-hiring-OmkarPh/
   ```
 
-### Installation
+- Setup Log ingestion server
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+  1. Go to `log-server` directory
+     ```sh
+       cd log-server/
+     ```
+  2. Install golang dependencies
+     ```sh
+     go mod download
+     ```
+  3. Install Python dependencies
+     ```sh
+     pip install -r requirements.txt
+     ```
+  4. Start the ingestion server
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+     ```sh
+     cd cmd
+     GIN_MODE=release go run .
+     ```
+     The server should now be running on [http://localhost:3000](http://localhost:3000).
 
-## Steps:
+  5. Simulate huge amount of sample logs simultaneously
+     Configure `LOGS_LENGTH` in `log-server/tests/performance_test.py`. Default value: 3000
 
+     ```sh
+     python tests/performance_test.py
+     ```
 
-Ensure Go & Python are installed
+- Setup Web UI
 
-Install golang dependencies
-`go mod download`
+  1. Go to `frontend` directory
+     ```sh
+       cd frontend/
+     ```
+  2. Install NPM dependencies
+     ```sh
+     npm install
+     ```
+  3. Start the React app
+     ```sh
+     npm start
+     ```
+  4. View the app here - [http://localhost:3006](http://localhost:3006)
 
-Install Python dependencies
-`pip install -r requirements.txt`
+- Simulate Log Publishers (Optional)
 
+  1.  Start zookeepr
 
-Local kafka instance (Optional)
+      ```sh
+      zookeeper-server-start //path-to-kafka-config/zoo.cfg
+      ```
 
-Start zookeepr
-`zookeeper-server-start /opt/homebrew/etc/zookeeper/zoo.cfg`
-
-Start kafka server
-`kafka-server-start /opt/homebrew/etc/kafka/server.properties`
-
-Run server using:
-`go run cmd/server.go`
+  2.  Start Kafka
+      ```sh
+      kafka-server-start /path-to-kafka-config/server.properties
+      ```
+  
+  3. Start publisher script
+      Go to `log-producers` directory
+      ```sh
+      cd log-server/log-producers
+      ```
+      Start a producer to simulate service using `--topic` option in different shells.
+      Configured topics: `auth`,`database`,`email`,`payment`,`server`,`services`,
+      ```sh
+      # Example:
+      python producer.py --topic payment
+      python producer.py --topic auth
+      ```
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- API spec -->
 
+## API Documentation
 
-<!-- USAGE EXAMPLES -->
-## Usage
+### Ingestion Routes
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+#### 1. New Log Ingestion
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+- **Endpoint:** `POST /`
+- **Description:** Ingests a new log entry into the system.
+
+  **Request Example:**
+
+  ```json
+  {
+    "level": "error",
+    "message": "Failed to connect to DB",
+    "resourceId": "server-1234",
+    "timestamp": "2023-09-15T08:00:00Z",
+    "traceId": "abc-xyz-123",
+    "spanId": "span-456",
+    "commit": "5e5342f",
+    "metadata": {
+      "parentResourceId": "server-0987"
+    }
+  }
+  ```
+
+  **Response Example:**
+
+  ```json
+  {
+    "status": "success"
+  }
+  ```
+
+#### 2. Count Logs
+
+- **Endpoint:** `GET /logs-count`
+- **Description:** Retrieves the count of logs stored in Elasticsearch.
+
+  **Response Example:**
+
+  ```json
+  {
+    "count": 5286
+  }
+  ```
+
+### Query Routes
+
+#### 1. Search Logs
+
+- **Endpoint:** `POST /search-logs`
+- **Description:** Searches for logs based on specified parameters. All the filter params, search text & time range are optional.
+
+  **Request Example:**
+
+  ```json
+  {
+    "text": "email",
+    "regexText": "jkl-*",
+    "filters": [
+      {
+        "columnName": "level",
+        "filterValues": ["error", "warning"]
+      },
+      {
+        "columnName": "resourceId",
+        "filterValues": ["user-123"]
+      },
+      {
+        "columnName": "metadata.parentResourceId",
+        "filterValues": ["9876", "1234"]
+      },
+      ... Other columns
+    ],
+    "timeRange": {
+      "startTime": "2023-11-19T00:00:00Z",
+      "endTime": "2023-11-19T23:59:59Z"
+    }
+  }
+  ```
+
+  **Response Example:**
+
+  ```json
+  {
+    "hits": {
+      "total": 5,
+      "hits": [
+        {
+          "_id": "1",
+          "_source": {
+            "level": "error",
+            "message": "Database connection error",
+            "resourceId": "user-123"
+            // ... (other log fields)
+          }
+        }
+        // Additional log entries
+      ]
+    }
+  }
+  ```
+
+## Additional Information
+
+- **Elasticsearch Index Name:** `log-ingestor`
+- **Server Port:** `:3000`
+- **CORS Configuration:** Allows all origins (`*`) and supports HTTP methods: GET, POST, PUT, DELETE.
+- **Concurrency Configuration:**
+  - Buffered log channel with a default capacity of 5000 logs. (Can be changed via `logsBufferSize`)
+  - Maximum concurrent log processing workers: 20.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+### Future improvements / Flaws
+* Kibana integration for better visual analysis
+* Persistent TCP or Web socket connection between servers (log producer) and log ingestor for lower latency
+* Redundant disk buffer for reliability
+* Alert system to notify administrators or users about critical log events in real-time.
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -218,18 +335,16 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Omkar Phansopkar - [@omkarphansopkar](https://twitter.com/omkarphansopkar) - omkarphansopkar@gmail.com
@@ -238,9 +353,8 @@ Omkar Phansopkar - [@omkarphansopkar](https://twitter.com/omkarphansopkar) - omk
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- MARKDOWN LINKS & IMAGES for github -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
@@ -253,7 +367,7 @@ Omkar Phansopkar - [@omkarphansopkar](https://twitter.com/omkarphansopkar) - omk
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/screenshot.gif
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
@@ -268,3 +382,5 @@ Omkar Phansopkar - [@omkarphansopkar](https://twitter.com/omkarphansopkar) - omk
 [Gin-url]: https://github.com/gin-gonic/gin
 [Python]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
 [Python-url]: https://www.python.org/
+[TypeScript]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/

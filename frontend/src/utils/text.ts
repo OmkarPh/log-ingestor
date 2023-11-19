@@ -1,0 +1,1 @@
+export const isValidSearchText = (searchText: string) => searchText && searchText.length > 0;

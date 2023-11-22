@@ -1,7 +1,8 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 
 <a name="readme-top"></a>
-<!-- 
+
+<!--
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -13,7 +14,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="assets/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Log ingestion & analysis</h3>
@@ -23,13 +24,11 @@
     <br />
     <!-- <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a> -->
     <!-- <br /> -->
-    <br />
-    <a href="https://youtu.be/dBZZXU9ydEA">View Video Demo 📽️</a>
-    <!-- ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a> -->
+    <h3>
+    <a href="https://youtu.be/dBZZXU9ydEA" target='_blank'>View Video Demo 📽️</a>
+    </h3>
   </p>
+
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -67,11 +66,13 @@
 
 ## About The Project
 
-[![Log analyser][product-screenshot]](https://github.com/OmkarPh)
+[![Log analyser][product-screenshot]](https://youtu.be/dBZZXU9ydEA)
+![Log analyser][product-arch]
 
 This is an efficient implementation of a log ingestion & analysis solution. It utilises Golang & Elastic DB to efficiently ingest, store & analyse logs. It can accept logs from two sources, Kafka queue or direct HTTP API requests. It also provides a web UI for analysis of logs using different filters & search queries.
 
 ### Features
+
 - Text-search across all fields
 - Regular expression search on all fields
 - Filters on specific fields
@@ -82,7 +83,6 @@ This is an efficient implementation of a log ingestion & analysis solution. It u
 - Ingestion Buffer & Batch processing
 - Efficient search queries leveraging Elastic DB
 - Scalable & Efficient processing using sharding provided by Elastic DB
-
 
 ### Built With
 
@@ -137,6 +137,7 @@ This is an efficient implementation of a log ingestion & analysis solution. It u
      cd cmd
      GIN_MODE=release go run .
      ```
+
      The server should now be running on [http://localhost:3000](http://localhost:3000).
 
   5. Simulate huge amount of sample logs simultaneously
@@ -171,11 +172,12 @@ This is an efficient implementation of a log ingestion & analysis solution. It u
       ```
 
   2.  Start Kafka
+
       ```sh
       kafka-server-start /path-to-kafka-config/server.properties
       ```
-  
-  3. Start publisher script
+
+  3.  Start publisher script
       Go to `log-producers` directory
       ```sh
       cd log-server/log-producers
@@ -187,7 +189,6 @@ This is an efficient implementation of a log ingestion & analysis solution. It u
       python producer.py --topic payment
       python producer.py --topic auth
       ```
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -308,14 +309,15 @@ This is an efficient implementation of a log ingestion & analysis solution. It u
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ### Future improvements / Flaws
-* Kibana integration for better visual analysis
-* Persistent TCP or Web socket connection between servers (log producer) and log ingestor for lower latency
-* Redundant disk buffer for reliability
-* Alert system to notify administrators or users about critical log events in real-time.
+
+- Kibana integration for better visual analysis
+- Persistent TCP or Web socket connection between servers (log producer) and log ingestor for lower latency
+- Redundant disk buffer for reliability
+- Alert system to notify administrators or users about critical log events in real-time.
 
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -363,7 +365,8 @@ Omkar Phansopkar - [@omkarphansopkar](https://twitter.com/omkarphansopkar) - omk
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.gif
+[product-screenshot]: assets/images/screenshot.gif
+[product-arch]: assets/images/arch.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
